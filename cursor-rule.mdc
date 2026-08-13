@@ -7,4 +7,21 @@ Quando o trabalho envolver MIT/TOTVS/Word/Excel, use a skill
 `escrever-mits` e consulte seu `SKILL.md`. Siga o fluxo de contexto, template
 Word exato, rascunho, revisão seção a seção, revisão final e autorização antes
 da saída. Não altere templates originais; Excel e PDF são fontes, a saída é
-sempre Word e a aprovação final cabe ao analista.
+sempre Word e a aprovação final cabe ao analista. Quando o comando estiver
+disponível no plugin do projeto, ele se chama `/escrever-mit`.
+
+Explore links pertinentes no navegador e registre as URLs consultadas. Edite a
+cópia `.docx` com Python, preserve o formato do Microsoft Word e não use
+LibreOffice ou conversões. Antes de cada seção e novamente antes da revisão
+completa, aplique o Humanizer ou o fallback editorial local, com segunda
+auditoria, sem alterar fatos, identificadores, códigos, números, restrições,
+critérios ou decisões. Ao escrever Open XML, clone um parágrafo corporal
+equivalente, inspecione `rPr`/`pPr` e exija validação visual manual no Word. Use
+linguagem formal, sem emojis.
+
+Quando agregarem clareza, reutilize tabelas Word e sugira fluxos Mermaid somente
+com fatos confirmados e autorização do analista. Use a CLI oficial local `mmdc`
+para SVG estático, PNG de fallback quando necessário e validação visual manual no
+Word. Mantenha `.mmd`, SVG e PNG intermediários fora de `saidas-mits/`; registre
+elementos criados ou alterados no Markdown. Não duplique o conteúdo completo da
+skill neste adaptador.
