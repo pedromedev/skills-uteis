@@ -1,0 +1,10 @@
+---
+description: "Ativa a skill escrever-mits para trabalhos com MIT, TOTVS, Word ou Excel"
+alwaysApply: false
+---
+
+Quando o trabalho envolver MIT/TOTVS/Word/Excel, use a skill
+`escrever-mits` e consulte seu `SKILL.md`. Siga o fluxo de contexto, template
+Word exato, rascunho, revisão seção a seção, revisão final e autorização antes
+da saída. Não altere templates originais; Excel e PDF são fontes, a saída é
+sempre Word e a aprovação final cabe ao analista.
