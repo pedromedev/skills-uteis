@@ -1,0 +1,13 @@
+---
+description: "Ativa a skill totvs-tdn para pesquisar documentação oficial no TDN da TOTVS"
+alwaysApply: false
+---
+
+Quando o trabalho depender de documentação oficial TOTVS, em especial do RM,
+use a skill `totvs-tdn` e consulte o `SKILL.md` dela. Abra a página no TDN,
+entregue título, link e síntese curta, e preserve alertas e limites. Se não
+houver TDN do assunto, diga isso. Não invente procedimento e não trate artigo
+de suporte ou conteúdo de terceiros como documentação oficial.
+
+Quando o comando estiver disponível no plugin, ele se chama `/totvs-tdn`.
+Não duplique o conteúdo completo da skill neste adaptador.
