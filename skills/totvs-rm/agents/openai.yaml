@@ -1,0 +1,3 @@
+interface:
+  display_name: "TOTVS RM"
+  short_description: "Consulta dicionário, parametrização e SQL do TOTVS RM"

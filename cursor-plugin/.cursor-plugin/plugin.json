@@ -1,5 +1,9 @@
 {
-  "name": "escrever-mits",
-  "description": "Comando e skill para preparar MITs TOTVS",
-  "version": "1.0.0"
+  "name": "skills-uteis",
+  "displayName": "Skills úteis",
+  "description": "Contexto técnico do TOTVS RM e do TDN, e redação de MITs TOTVS.",
+  "version": "1.1.0",
+  "homepage": "https://github.com/pedromedev/skills-uteis",
+  "repository": "https://github.com/pedromedev/skills-uteis",
+  "keywords": ["totvs", "rm", "tdn", "mit"]
 }

@@ -1,0 +1,17 @@
+---
+description: "Ativa a skill totvs-rm para tabela, campo, SQL, dicionário ou parametrização do TOTVS RM"
+alwaysApply: false
+---
+
+Quando o trabalho pedir tabela, campo, relacionamento, módulo, parâmetro,
+sentença SQL ou dicionário do TOTVS RM, use a skill `totvs-rm` e consulte o
+`SKILL.md` dela. Não invente nome de tabela, campo, DataServer ou parâmetro.
+Camadas 2 e 3 só com consulta ao vivo na base em uso.
+
+Modo local: MCP de SQL Server com o nome `sqlserver`, sem credencial neste
+pacote. Modo cliente: `projeto-cliente.md` preenchido na raiz do projeto e
+sondagem autorizada. Sem os dois, pare. Não execute SQL que altere dados nem
+crie, altere ou remova sentença sem confirmação explícita do usuário.
+
+Quando o comando estiver disponível no plugin, ele se chama `/totvs-rm`.
+Não duplique o conteúdo completo da skill neste adaptador.
