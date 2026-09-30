@@ -42,7 +42,7 @@ Consulta o RM em dois modos, e só responde com fonte:
 - **Modo local.** MCP de SQL Server disponível para o agente com o nome `sqlserver`. Antes de tratar um resultado como fato, o agente confirma a qual base o MCP está conectado.
 - **Modo cliente.** Existe um `projeto-cliente.md` preenchido na raiz do projeto. O agente não tem o banco. Camadas 2 e 3 só por sondagem autorizada no RM daquele cliente. O modelo sem credencial está em `skills/totvs-rm/references/projeto-cliente.exemplo.md`.
 
-Sem MCP e sem `projeto-cliente.md`, a skill para. Não há senha, connection string nem token neste pacote. Quem usa configura a conexão na própria máquina e não grava segredo no repositório.
+Sem o MCP `sqlserver` e sem `projeto-cliente.md`, a skill conduz a configuração em `skills/totvs-rm/references/configuracao.md`. Ela pergunta o modo, mostra as opções de MCP e só instala ou grava arquivo depois de uma confirmação explícita. Não há senha, connection string nem token neste pacote. A senha fica em variável de ambiente, nunca em arquivo do repositório ou da skill.
 
 Camada 1 é a estrutura do dicionário (`GDIC`, `GCAMPOS`, `GLINKSREL`, `GMODULO`), documentada na skill. Camadas 2 e 3 (o que existe nesta base, parâmetros, coligadas, códigos cadastrados) só com consulta ao vivo. SQL que altera dados, e criar, alterar ou remover sentença, exigem confirmação explícita do usuário. Criar sentença é escrita, mesmo quando o texto é um `SELECT`.
 
@@ -58,10 +58,10 @@ A skill `escrever-mits` continua indo para os mesmos diretórios de instalação
 
 ## Pré-requisito do totvs-rm
 
-Um dos dois, configurado por quem usa:
+A configuração é guiada. Se faltar o MCP e o `projeto-cliente.md`, o agente segue `skills/totvs-rm/references/configuracao.md`: pergunta se o modo é local ou cliente e espera confirmação antes de instalar pacote, gravar arquivo ou alterar configuração global.
 
-1. **Modo local:** servidor MCP de SQL Server registrado com o nome `sqlserver`. Este repositório não distribui `mcp.json`, host, usuário nem senha.
-2. **Modo cliente:** arquivo `projeto-cliente.md` na raiz do projeto de trabalho, preenchido, fora deste pacote e fora de repositório público. Sem credencial.
+1. **Modo local:** MCP de SQL Server registrado com o nome `sqlserver`. O guia cita duas opções conferidas (um pacote npm somente leitura e um servidor local somente leitura que não está no npm) e o registro em Claude Code, Cursor, Codex, Gemini CLI e OpenCode. Este repositório não distribui `mcp.json`, host, usuário nem senha. A senha fica em variável de ambiente.
+2. **Modo cliente:** o agente cria `projeto-cliente.md` na raiz do projeto de trabalho, a partir de `skills/totvs-rm/references/projeto-cliente.template.md`, com endereço do RM, nome da base e ambiente. Sem credencial, fora deste pacote e fora de repositório público.
 
 O Humanizer é opcional, para a redação de `escrever-mits`:
 
