@@ -6,13 +6,16 @@ foi **viável**, com o contrato técnico documentado em `deploy-sentenca.md`.
 ## Quando este modo se aplica
 
 Existe um `projeto-cliente.md` preenchido na raiz do projeto atual. Sem
-esse arquivo, é modo local — ver `SKILL.md`. O predicado é observável de
+esse arquivo, é modo local — ver `../SKILL.md`. O predicado é observável de
 propósito: não depende de julgamento sobre "isso parece ambiente de
 cliente".
 
-Um modelo sem dados de cliente está em `projeto-cliente.exemplo.md`, nesta
-mesma pasta. O arquivo real fica na raiz do projeto do usuário, não dentro
-da skill, e não leva senha, connection string nem token.
+O arquivo real fica na raiz do projeto do usuário, não dentro da skill. Quem
+ainda não tem esse arquivo segue `configuracao.md`: o agente pergunta endereço
+do RM, nome da base e ambiente (`homologação` ou `produção`) e grava
+`projeto-cliente.md` a partir de `projeto-cliente.template.md`, nesta pasta,
+só depois da confirmação. O arquivo não leva senha, usuário, token nem
+connection string. `projeto-cliente.exemplo.md` explica o que ele não é.
 
 ## A regra dura
 

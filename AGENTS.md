@@ -20,7 +20,7 @@ dela. Não procure caminho absoluto de máquina.
 1. Ler `distribucao.json` e clonar `clone` (https://github.com/pedromedev/skills-uteis.git).
 2. Copiar as três pastas de `skills/` inteiras para o diretório de skills do agente. `references/` e `conhecimento/` vão junto.
 3. Copiar `commands/` só se o agente tiver pasta de comandos. Codex não tem slash command oficial.
-4. Não gravar credencial. `totvs-rm` em modo local exige o MCP `sqlserver` já configurado na máquina. Em modo cliente, o projeto precisa de `projeto-cliente.md` sem senha.
+4. Não gravar credencial. `totvs-rm` em modo local usa o MCP `sqlserver`. Em modo cliente, o projeto precisa de `projeto-cliente.md` sem senha. Se faltarem os dois, a configuração é guiada: siga `skills/totvs-rm/references/configuracao.md` e peça confirmação antes de instalar ou alterar config.
 
 Atalho, quando `npx` estiver disponível:
 
@@ -33,7 +33,7 @@ Destinos manuais: Claude Code em `.claude/skills` ou `~/.claude/skills`; Codex e
 ## Fluxo recomendado
 
 1. `totvs-tdn` para achar e abrir o TDN oficial. Registrar título, link, versão visível e limites. Dizer quando não houver TDN.
-2. `totvs-rm` para confirmar tabela, campo, relacionamento e parâmetro na base em uso. Sem MCP `sqlserver` e sem `projeto-cliente.md`, parar.
+2. `totvs-rm` para confirmar tabela, campo, relacionamento e parâmetro na base em uso. Sem MCP `sqlserver` e sem `projeto-cliente.md`, conduzir a configuração guiada em `references/configuracao.md` da skill, com confirmação antes de instalar qualquer coisa.
 3. Gravar o confirmado em `contexto/ENTREVISTA-DOCUMENTO.md`. Lacuna = `A confirmar`.
 4. `escrever-mits` com essa pasta e o caminho exato do template Word. Saída em `saidas-mits/`, só depois da autorização do analista.
 
@@ -45,9 +45,9 @@ Nunca invente nome de tabela, campo, DataServer ou parâmetro do RM. Sem confirm
 
 Camadas 2 e 3 (conteúdo do dicionário e parametrização) só com consulta ao vivo na base em uso. Nunca respondê-las com dado de outra base. Camada 1 está em `references/dicionario.md`, relativa à skill. Semântica de produto vai para `conhecimento/`, com nível, evidência e data, sem dado de cliente.
 
-Não execute SQL que altere dados nem ações em produção sem confirmação explícita do usuário. Criar, alterar ou remover sentença é escrita, mesmo quando o texto é um `SELECT`. Diferencie fato confirmado, hipótese e recomendação. Ressalva não autoriza uso: "a confirmar" bloqueia a entrega.
+Não execute SQL que altere dados nem ações em produção sem confirmação explícita do usuário. Criar, alterar ou remover sentença é escrita, mesmo quando o texto é um `SELECT`. Não instale pacote nem altere configuração global do agente sem a mesma confirmação. Diferencie fato confirmado, hipótese e recomendação. Ressalva não autoriza uso: "a confirmar" bloqueia a entrega.
 
-Não há credencial no pacote. Não grave senha, connection string nem token.
+Não há credencial no pacote. Não grave senha, connection string nem token. A senha do modo local fica em variável de ambiente. Se faltarem o MCP `sqlserver` e o `projeto-cliente.md`, leia `references/configuracao.md` na pasta da skill, pergunte o modo e só então proponha a instalação.
 
 ## totvs-tdn
 

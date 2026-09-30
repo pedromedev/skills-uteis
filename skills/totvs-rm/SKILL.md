@@ -17,12 +17,11 @@ contém este `SKILL.md`), não à raiz do projeto do usuário.
 
 ## Antes de qualquer resposta: em que modo você está?
 
-Existe um `projeto-cliente.md` preenchido na raiz do projeto atual?
+Existe um `projeto-cliente.md` preenchido na raiz do projeto atual? Preenchido quer dizer endereço do RM, nome da base e ambiente, como em `references/configuracao.md`.
 
 - **Sim → modo cliente.** Você não tem o banco. Camadas 2 e 3 só por sondagem no RM do cliente, com autorização — leia `references/modo-cliente.md`.
-- **Não → modo local.** Você tem o MCP de SQL Server configurado (esperado: `sqlserver`). Antes de tratar qualquer resultado como autoritativo, confirme a qual base ele está conectado.
-
-Sem MCP e sem `projeto-cliente.md`? Pare e peça configuração. Não responda de memória — nenhum dos dois modos permite isso.
+- **Não, e o MCP `sqlserver` está disponível → modo local.** Antes de tratar qualquer resultado como autoritativo, confirme a qual base ele está conectado.
+- **Não, e o MCP `sqlserver` também não está → configuração guiada.** Leia `references/configuracao.md`, pergunte o modo e conduza a configuração. Não responda de memória. Não instale pacote, não grave arquivo e não altere configuração global sem confirmação explícita do usuário.
 
 Não há credencial neste pacote. A conexão do MCP `sqlserver` e o arquivo
 `projeto-cliente.md` ficam na máquina de quem usa. Não grave senha, connection
@@ -63,8 +62,8 @@ Descobriu semântica nova? Registre em `conhecimento/`, com nível de validaçã
 
 ## Referências (pasta da skill)
 
-`references/dicionario.md` · `references/modulos.md` · `references/sql-no-rm.md` · `references/parametrizacao.md` · `references/modo-cliente.md` · `references/deploy-sentenca.md` · `references/pesquisa-semantica.md`
+`references/dicionario.md` · `references/modulos.md` · `references/sql-no-rm.md` · `references/parametrizacao.md` · `references/modo-cliente.md` · `references/deploy-sentenca.md` · `references/pesquisa-semantica.md` · `references/configuracao.md`
 
 ## Limites com o usuário
 
-Não execute SQL que altere dados nem ações em produção sem confirmação explícita do usuário. Criar, alterar ou remover sentença no RM é escrita, mesmo quando o texto da sentença é um `SELECT`. Diferencie fato confirmado, hipótese e recomendação.
+Não execute SQL que altere dados nem ações em produção sem confirmação explícita do usuário. Criar, alterar ou remover sentença no RM é escrita, mesmo quando o texto da sentença é um `SELECT`. Não instale pacote nem altere configuração global do agente sem a mesma confirmação. Diferencie fato confirmado, hipótese e recomendação.
